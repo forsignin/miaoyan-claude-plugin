@@ -18,13 +18,21 @@
 
 ### 安装
 
+#### 方式一: 从插件市场安装(推荐)
+
+```bash
+/plugin marketplace add forsignin/miaoyan-claude-plugin
+```
+
+#### 方式二: 手动安装
+
 将此插件放到 Claude Code 的插件目录:
 
 ```bash
 cp -r miaoyan-ppt-generator ~/.claude/plugins/
 ```
 
-重启 Claude Code 后即可使用。
+安装完成后重启 Claude Code 即可使用。
 
 ### 使用方式
 
