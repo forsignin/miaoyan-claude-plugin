@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "name": "miaoyan-ppt-generator",
+  "description": "智能生成妙言 Markdown 演示文稿,支持 Reveal.js 所有特性",
+  "author": {
+    "name": "forsignin"
+  },
+  "homepage": "https://github.com/forsignin/miaoyan-ppt-generator",
+  "repository": "https://github.com/forsignin/miaoyan-ppt-generator",
+  "keywords": [
+    "miaoyan",
+    "presentation",
+    "ppt",
+    "markdown",
+    "reveal.js",
+    "slides"
+  ],
+  "commands": {
+    "create-ppt": {
+      "description": "快速创建妙言 PPT - 交互式引导生成演示文稿",
+      "source": "./commands/create-ppt.md"
+    },
+    "enhance-ppt": {
+      "description": "增强现有 PPT - 添加动画、背景、代码高亮等特效",
+      "source": "./commands/enhance-ppt.md"
+    },
+    "ppt-from-outline": {
+      "description": "从大纲生成 PPT - 输入结构化大纲快速生成幻灯片",
+      "source": "./commands/ppt-from-outline.md"
+    }
+  }
+}

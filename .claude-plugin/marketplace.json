@@ -1,0 +1,20 @@
+{                                                                                
+  "owner": {
+    "name": "forsignin",
+    "url": "https://github.com/miaoyan-claude-plugin"
+  },
+  "name": "miaoyan-claude-plugin",
+  "description": "插件市场",
+  "plugins": [
+    {
+      "name": "miaoyan-ppt-generator",
+      "description": "妙言ppt生成器",
+      "source": "./miaoyan-ppt-generator",
+      "version": "0.0.1",
+      "author": {
+        "name": "forsignin",
+        "url": "https://github.com/forsignin"
+      }
+    }
+  ]
+}
