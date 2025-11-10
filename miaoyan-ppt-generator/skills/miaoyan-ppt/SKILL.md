@@ -1,90 +1,90 @@
 ---
 name: miaoyan-ppt
-description: Generate professional Miaoyan Markdown presentations with Reveal.js features. Use this skill when users need to create presentation slides from scratch, convert content to PPT format, or enhance existing presentations with animations, backgrounds, and code highlighting. Ideal for technical talks, product demos, teaching materials, and business proposals.
+description: 生成专业的妙言 Markdown 演示文稿,支持 Reveal.js 特性。当用户需要从零开始创建演示幻灯片、将内容转换为 PPT 格式或增强现有演示文稿(添加动画、背景和代码高亮)时使用此技能。适用于技术分享、产品演示、教学材料和商业提案。
 ---
 
-# Miaoyan PPT Generator
+# 妙言 PPT 生成器
 
-## Overview
+## 概述
 
-Generate professional presentation slides in Miaoyan Markdown format with full Reveal.js support. Transform ideas, outlines, or existing content into visually appealing slide decks with animations, custom backgrounds, code highlighting, and structured layouts.
+生成专业的妙言 Markdown 格式演示幻灯片,完全支持 Reveal.js。将想法、大纲或现有内容转换为具有动画、自定义背景、代码高亮和结构化布局的视觉吸引力幻灯片。
 
-## When to Use This Skill
+## 何时使用此技能
 
-Activate this skill when users request:
+当用户请求以下场景时激活此技能:
 
-- Creating a new presentation from scratch
-- Converting documents or content into slide format
-- Generating slides from topic outlines or bullet points
-- Adding visual effects (animations, backgrounds) to presentations
-- Creating technical talks, product demonstrations, or teaching materials
-- Building presentations with code examples and syntax highlighting
-- Enhancing existing presentations with Reveal.js features
+- 从零开始创建新演示文稿
+- 将文档或内容转换为幻灯片格式
+- 从主题大纲或要点生成幻灯片
+- 为演示文稿添加视觉效果(动画、背景)
+- 创建技术分享、产品演示或教学材料
+- 创建包含代码示例和语法高亮的演示文稿
+- 使用 Reveal.js 特性增强现有演示文稿
 
-**Trigger phrases:** "create a PPT", "generate slides", "make a presentation", "convert to slides", "妙言演示", "生成幻灯片"
+**触发短语:** "创建 PPT"、"生成幻灯片"、"制作演示文稿"、"转换为幻灯片"、"妙言演示"、"生成幻灯片"
 
-## Workflow Decision Tree
+## 工作流决策树
 
 ```
-User Request
+用户请求
     ↓
-Is it a new presentation?
-    ├─ Yes → Follow "Creating New Presentations" workflow
-    └─ No → Is it enhancing existing slides?
-        ├─ Yes → Follow "Enhancing Presentations" workflow
-        └─ No → Follow "Converting Content" workflow
+是新建演示文稿吗?
+    ├─ 是 → 遵循"创建新演示文稿"工作流
+    └─ 否 → 是增强现有幻灯片吗?
+        ├─ 是 → 遵循"增强演示文稿"工作流
+        └─ 否 → 遵循"转换内容"工作流
 ```
 
-## Creating New Presentations
+## 创建新演示文稿
 
-### Step 1: Understand Requirements
+### 步骤 1: 理解需求
 
-Gather essential information through the following questions (if not provided):
+通过以下问题收集关键信息(如果未提供):
 
-- **Topic**: What is the presentation about?
-- **Audience**: Who will view this? (developers, managers, students, customers)
-- **Purpose**: Technical training, product launch, teaching, business proposal?
-- **Scope**: Expected number of slides or duration?
-- **Style preference**: Technical, business, educational, creative?
+- **主题**: 演示文稿的内容是什么?
+- **受众**: 谁会观看?(开发者、管理者、学生、客户)
+- **目的**: 技术培训、产品发布、教学、商业提案?
+- **范围**: 预期幻灯片数量或时长?
+- **风格偏好**: 技术型、商务型、教育型、创意型?
 
-Use `AskUserQuestion` tool if critical information is missing. Structure questions clearly with options.
+如果缺少关键信息,使用 `AskUserQuestion` 工具。清晰地构建问题和选项。
 
-### Step 2: Generate Outline
+### 步骤 2: 生成大纲
 
-Based on requirements, create a structured outline:
+根据需求创建结构化大纲:
 
-**Standard Structure:**
+**标准结构:**
 ```
-1. Cover slide - Title + subtitle
-2. Table of contents (if > 10 slides)
-3. Section 1
-   - Section intro (with background)
-   - Content slides (2-4)
-4. Section 2
-   - Section intro
-   - Content slides (2-4)
-   - Code examples (if technical)
-5. Summary slide
-6. Q&A slide
+1. 封面幻灯片 - 标题 + 副标题
+2. 目录(如果 > 10 张幻灯片)
+3. 第一部分
+   - 部分介绍(带背景)
+   - 内容幻灯片(2-4 张)
+4. 第二部分
+   - 部分介绍
+   - 内容幻灯片(2-4 张)
+   - 代码示例(如果是技术内容)
+5. 总结幻灯片
+6. 问答幻灯片
 ```
 
-**Present the outline to the user for confirmation before generating content.**
+**在生成内容之前,向用户展示大纲以确认。**
 
-### Step 3: Select Template
+### 步骤 3: 选择模板
 
-Choose an appropriate template from `assets/templates/` based on presentation type:
+根据演示类型从 `assets/templates/` 中选择合适的模板:
 
-- **tech-share-template.md**: Technical talks, architecture discussions, code demos
-- **product-intro-template.md**: Product launches, feature showcases, roadmaps
-- **teaching-template.md**: Educational content, training courses, tutorials
+- **tech-share-template.md**: 技术分享、架构讨论、代码演示
+- **product-intro-template.md**: 产品发布、特性展示、路线图
+- **teaching-template.md**: 教育内容、培训课程、教程
 
-Read the template using `Read` tool to understand structure and style patterns.
+使用 `Read` 工具读取模板以理解结构和样式模式。
 
-### Step 4: Configure Reveal.js Settings
+### 步骤 4: 配置 Reveal.js 设置
 
-Add inline configuration at the document start based on presentation type:
+根据演示类型在文档开头添加内联配置:
 
-**Technical presentations:**
+**技术演示:**
 ```markdown
 <!--
 transition: convex
@@ -96,7 +96,7 @@ slideNumber: c/t
 -->
 ```
 
-**Product presentations:**
+**产品演示:**
 ```markdown
 <!--
 transition: slide
@@ -108,7 +108,7 @@ slideNumber: c/t
 -->
 ```
 
-**Educational content:**
+**教育内容:**
 ```markdown
 <!--
 transition: none
@@ -119,68 +119,68 @@ slideNumber: c/t
 -->
 ```
 
-Refer to `references/reveal-js-syntax.md` for complete configuration options.
+参考 `references/reveal-js-syntax.md` 获取完整配置选项。
 
-### Step 5: Generate Slide Content
+### 步骤 5: 生成幻灯片内容
 
-Create slides following these patterns:
+按照以下模式创建幻灯片:
 
-#### Cover Slide
+#### 封面幻灯片
 ```markdown
-# Presentation Title
+# 演示标题
 
-Subtitle or brief description
+副标题或简要描述
 
 ---
 ```
 
-#### Section Intro (with background)
+#### 部分介绍(带背景)
 ```markdown
 <!-- .slide: data-background="#4A90E2" -->
-## Section Name
+## 部分名称
 
-Brief introduction or tagline
-
----
-```
-
-**Recommended background colors:**
-- Blue: `#4A90E2`, `#E3F2FD`
-- Green: `#4CAF50`, `#E8F5E9`
-- Orange: `#FF9800`, `#FFF3E0`
-- Purple: `#9C27B0`, `#F3E5F5`
-- Gradient: `data-background-gradient="linear-gradient(45deg, #667eea 0%, #764ba2 100%)"`
-
-#### Content Slide with Fragments
-```markdown
-## Slide Title
-
-- Point 1 <!-- .element: class="fragment" data-fragment-index="1" -->
-- Point 2 <!-- .element: class="fragment" data-fragment-index="2" -->
-- Point 3 <!-- .element: class="fragment" data-fragment-index="3" -->
+简要介绍或标语
 
 ---
 ```
 
-#### Two-Column Layout
+**推荐的背景颜色:**
+- 蓝色: `#4A90E2`, `#E3F2FD`
+- 绿色: `#4CAF50`, `#E8F5E9`
+- 橙色: `#FF9800`, `#FFF3E0`
+- 紫色: `#9C27B0`, `#F3E5F5`
+- 渐变: `data-background-gradient="linear-gradient(45deg, #667eea 0%, #764ba2 100%)"`
+
+#### 带片段的内容幻灯片
 ```markdown
-## Comparison
+## 幻灯片标题
+
+- 要点 1 <!-- .element: class="fragment" data-fragment-index="1" -->
+- 要点 2 <!-- .element: class="fragment" data-fragment-index="2" -->
+- 要点 3 <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+```
+
+#### 两栏布局
+```markdown
+## 对比
 
 <div style="display: flex; gap: 2rem;">
 <div style="flex: 1;">
 
-**Left Column**
+**左栏**
 
-- Item A
-- Item B
+- 项目 A
+- 项目 B
 
 </div>
 <div style="flex: 1;">
 
-**Right Column**
+**右栏**
 
-- Item C
-- Item D
+- 项目 C
+- 项目 D
 
 </div>
 </div>
@@ -188,17 +188,17 @@ Brief introduction or tagline
 ---
 ```
 
-#### Code Example with Highlighting
+#### 带高亮的代码示例
 ````markdown
-## Code Demo
+## 代码演示
 
 ```python [1-3|5-7|9-11]
 def initialize():
-    """Setup function"""
+    """设置函数"""
     return config
 
 def process(data):
-    """Process data"""
+    """处理数据"""
     return transform(data)
 
 if __name__ == "__main__":
@@ -208,234 +208,234 @@ if __name__ == "__main__":
 ---
 ````
 
-Syntax: `[1|2-3|4]` highlights line 1, then lines 2-3, then line 4 progressively.
+语法: `[1|2-3|4]` 依次高亮第 1 行、第 2-3 行、第 4 行。
 
-#### Data Table
+#### 数据表格
 ```markdown
-## Metrics
+## 指标
 
-| Feature | Value | Status |
-|---------|-------|--------|
-| Performance | High | ✅ |
-| Cost | Low | ✅ |
-| Scalability | Excellent | ✅ |
+| 特性 | 值 | 状态 |
+|------|------|--------|
+| 性能 | 高 | ✅ |
+| 成本 | 低 | ✅ |
+| 可扩展性 | 优秀 | ✅ |
 
 ---
 ```
 
-#### Closing Slide
+#### 结束幻灯片
 ```markdown
 <!-- .slide: data-background-gradient="linear-gradient(45deg, #667eea 0%, #764ba2 100%)" -->
 
-# Thank You
+# 谢谢
 
-## Questions & Answers
+## 问题与解答
 
-Contact: your@email.com
+联系方式: your@email.com
 
 ---
 ```
 
-### Step 6: Apply Visual Enhancements
+### 步骤 6: 应用视觉增强
 
-Use fragment animations for important content. Available fragment classes:
+为重要内容使用片段动画。可用的片段类:
 
-- `fragment` - Basic fade in
-- `fragment fade-up` - Slide up
-- `fragment fade-down` - Slide down
-- `fragment highlight-red` - Red highlight
-- `fragment highlight-green` - Green highlight
-- `fragment highlight-blue` - Blue highlight
-- `fragment grow` - Scale up
-- `fragment shrink` - Scale down
+- `fragment` - 基本淡入
+- `fragment fade-up` - 向上滑动
+- `fragment fade-down` - 向下滑动
+- `fragment highlight-red` - 红色高亮
+- `fragment highlight-green` - 绿色高亮
+- `fragment highlight-blue` - 蓝色高亮
+- `fragment grow` - 放大
+- `fragment shrink` - 缩小
 
-Example:
+示例:
 ```markdown
-<p class="fragment fade-up">First sentence</p>
-<p class="fragment highlight-red">Important emphasis</p>
-<p class="fragment grow">Key conclusion</p>
+<p class="fragment fade-up">第一句话</p>
+<p class="fragment highlight-red">重要强调</p>
+<p class="fragment grow">关键结论</p>
 ```
 
-Refer to `references/reveal-js-syntax.md` for complete fragment options.
+参考 `references/reveal-js-syntax.md` 获取完整片段选项。
 
-### Step 7: Output File
+### 步骤 7: 输出文件
 
-Use `Write` tool to create the presentation file:
+使用 `Write` 工具创建演示文件:
 
-**File naming:** `{topic}-presentation.md` or user-specified name
-**Location:** Current working directory or user-specified path
-**Encoding:** UTF-8
+**文件命名:** `{主题}-presentation.md` 或用户指定的名称
+**位置:** 当前工作目录或用户指定路径
+**编码:** UTF-8
 
-After creation, inform the user:
+创建后,告知用户:
 ```
-✅ Generated Miaoyan PPT: {file_path}
+✅ 已生成妙言 PPT: {file_path}
 
-📊 Statistics:
-- Total slides: {N}
-- Code blocks: {N}
-- Animations: {N}
+📊 统计信息:
+- 总幻灯片数: {N}
+- 代码块: {N}
+- 动画: {N}
 
-🎯 Usage:
-Open in Miaoyan and press Command + Option + P for presentation mode
+🎯 使用方法:
+在妙言中打开并按 Command + Option + P 进入演示模式
 ```
 
-## Enhancing Presentations
+## 增强演示文稿
 
-To enhance an existing presentation with visual effects:
+要为现有演示文稿添加视觉效果:
 
-### Step 1: Read Existing File
+### 步骤 1: 读取现有文件
 
-Use `Read` tool to load the current presentation content.
+使用 `Read` 工具加载当前演示内容。
 
-### Step 2: Identify Enhancement Opportunities
+### 步骤 2: 识别增强机会
 
-Analyze content to determine where to add:
-- Fragment animations for key points
-- Background colors for section dividers
-- Code highlighting for technical examples
-- Layout improvements (two-column, grids)
+分析内容以确定在哪里添加:
+- 关键要点的片段动画
+- 部分分隔符的背景颜色
+- 技术示例的代码高亮
+- 布局改进(两栏、网格)
 
-### Step 3: Apply Enhancements
+### 步骤 3: 应用增强
 
-Use `Edit` tool to modify the file:
+使用 `Edit` 工具修改文件:
 
-**Adding fragments:**
+**添加片段:**
 ```markdown
-- Important point <!-- .element: class="fragment" -->
+- 重要要点 <!-- .element: class="fragment" -->
 ```
 
-**Adding backgrounds:**
+**添加背景:**
 ```markdown
 <!-- .slide: data-background="#4A90E2" -->
 ```
 
-**Adding code highlighting:**
+**添加代码高亮:**
 ````markdown
 ```python [1|2-4|5]
 ````
 
-### Step 4: Verify and Save
+### 步骤 4: 验证并保存
 
-Confirm changes maintain proper Markdown syntax and Reveal.js compatibility.
+确认更改保持正确的 Markdown 语法和 Reveal.js 兼容性。
 
-## Converting Content
+## 转换内容
 
-To convert existing documents to presentation format:
+将现有文档转换为演示格式:
 
-### Step 1: Read Source Content
+### 步骤 1: 读取源内容
 
-Use `Read` tool to load the source file (Markdown, text, etc.).
+使用 `Read` 工具加载源文件(Markdown、文本等)。
 
-### Step 2: Analyze Structure
+### 步骤 2: 分析结构
 
-Identify:
-- Main sections (become section intro slides)
-- Subsections (become content slides)
-- Lists (use fragment animations)
-- Code blocks (add line highlighting)
-- Tables (keep as-is or enhance)
+识别:
+- 主要部分(成为部分介绍幻灯片)
+- 子部分(成为内容幻灯片)
+- 列表(使用片段动画)
+- 代码块(添加行高亮)
+- 表格(保持原样或增强)
 
-### Step 3: Transform to Slides
+### 步骤 3: 转换为幻灯片
 
-Reorganize content into slide format:
-- Extract headings as slide titles
-- Break long paragraphs into bullet points (3-5 per slide)
-- Add horizontal separators (`---`)
-- Insert section intro slides with backgrounds
-- Add fragment animations to key points
+将内容重组为幻灯片格式:
+- 提取标题作为幻灯片标题
+- 将长段落拆分为要点(每张幻灯片 3-5 个)
+- 添加水平分隔符(`---`)
+- 插入带背景的部分介绍幻灯片
+- 为关键要点添加片段动画
 
-### Step 4: Generate New File
+### 步骤 4: 生成新文件
 
-Use `Write` tool to create the presentation version.
+使用 `Write` 工具创建演示版本。
 
-## Content Guidelines
+## 内容指南
 
-Follow these standards for quality:
+遵循以下质量标准:
 
-### Structure Standards
+### 结构标准
 
-- **Must have:** Cover slide, section intros, summary/Q&A
-- **Recommended:** Table of contents if > 10 slides
-- **Avoid:** Single slide with > 7 bullet points
+- **必须有:** 封面幻灯片、部分介绍、总结/问答
+- **推荐:** 如果 > 10 张幻灯片则添加目录
+- **避免:** 单张幻灯片包含 > 7 个要点
 
-### Content Standards
+### 内容标准
 
-- **Clear titles:** Each slide has descriptive title
-- **Concise points:** 3-5 key points per slide
-- **Progressive disclosure:** Use fragments for step-by-step reveal
-- **Code clarity:** Highlight key lines, keep examples focused
+- **清晰标题:** 每张幻灯片都有描述性标题
+- **简洁要点:** 每张幻灯片 3-5 个关键要点
+- **渐进披露:** 使用片段逐步显示
+- **代码清晰:** 高亮关键行,保持示例聚焦
 
-### Visual Standards
+### 视觉标准
 
-- **Consistent colors:** Use same palette throughout
-- **Hierarchy:** Section intros with distinct backgrounds
-- **Emphasis:** Contrast colors for key conclusions
-- **Alignment:** Tables and code blocks properly aligned
+- **一致颜色:** 全程使用相同色板
+- **层次结构:** 部分介绍使用独特背景
+- **强调:** 关键结论使用对比色
+- **对齐:** 表格和代码块正确对齐
 
-### Animation Standards
+### 动画标准
 
-- **Logical order:** Set `data-fragment-index` sequentially
-- **Purposeful use:** Animate important content only
-- **Avoid overuse:** Maximum 5 fragments per slide
-- **Code progression:** Use line ranges for step-by-step explanation
+- **逻辑顺序:** 按顺序设置 `data-fragment-index`
+- **有目的使用:** 仅对重要内容使用动画
+- **避免过度使用:** 每张幻灯片最多 5 个片段
+- **代码进度:** 使用行范围逐步解释
 
-## Quality Checklist
+## 质量检查清单
 
-Before finalizing, verify:
+最终确定前验证:
 
-- [ ] Configuration header syntax is correct
-- [ ] Every slide has a clear title
-- [ ] Code blocks have language identifiers
-- [ ] Fragment indices are sequential (if used)
-- [ ] Background colors are used appropriately
-- [ ] No Markdown syntax errors
-- [ ] Chinese punctuation is correct (if applicable)
-- [ ] File encoding is UTF-8
+- [ ] 配置头语法正确
+- [ ] 每张幻灯片都有清晰标题
+- [ ] 代码块有语言标识符
+- [ ] 片段索引是连续的(如果使用)
+- [ ] 背景颜色使用适当
+- [ ] 无 Markdown 语法错误
+- [ ] 中文标点符号正确(如适用)
+- [ ] 文件编码为 UTF-8
 
-## Error Handling
+## 错误处理
 
-### Content Too Long
+### 内容过长
 
-If a single slide exceeds 200 words:
-- Automatically split into multiple slides
-- Maintain logical flow
-- Notify user of pagination
+如果单张幻灯片超过 200 字:
+- 自动拆分为多张幻灯片
+- 保持逻辑流程
+- 通知用户分页情况
 
-### Code Formatting
+### 代码格式化
 
-Ensure code blocks have:
-- Correct language identifier
-- Valid line highlight syntax: `[1|2-4|5-7]`
-- Consistent indentation
+确保代码块具有:
+- 正确的语言标识符
+- 有效的行高亮语法: `[1|2-4|5-7]`
+- 一致的缩进
 
-### Configuration Conflicts
+### 配置冲突
 
-If user requirements conflict with template:
-- Prioritize user-specified configurations
-- Notify user of overrides
+如果用户需求与模板冲突:
+- 优先使用用户指定的配置
+- 通知用户覆盖情况
 
-## Resources
+## 资源
 
 ### references/
 
-- **reveal-js-syntax.md**: Complete Reveal.js Markdown syntax reference - load when needing syntax details
-- **template-examples.md**: Example presentations for different scenarios - reference for structure patterns
+- **reveal-js-syntax.md**: 完整的 Reveal.js Markdown 语法参考 - 需要语法细节时加载
+- **template-examples.md**: 不同场景的示例演示 - 结构模式参考
 
 ### assets/templates/
 
-- **tech-share-template.md**: Full template for technical presentations
-- **product-intro-template.md**: Full template for product demonstrations
-- **teaching-template.md**: Full template for educational content
+- **tech-share-template.md**: 技术演示的完整模板
+- **product-intro-template.md**: 产品演示的完整模板
+- **teaching-template.md**: 教育内容的完整模板
 
-**Usage:** Read templates to understand structure and styling patterns, then adapt to user's specific content.
+**使用方法:** 读取模板以理解结构和样式模式,然后适配用户的具体内容。
 
-## Best Practices
+## 最佳实践
 
-1. **Understand first**: Clarify topic and audience before generating
-2. **Confirm outline**: Show structure to user before creating content
-3. **Progressive reveal**: Use fragments for important content
-4. **Visual hierarchy**: Use backgrounds to separate sections
-5. **Simplicity**: One core idea per slide
-6. **Code focus**: Show only essential code, remove boilerplate
-7. **Consistency**: Maintain uniform colors, fonts, and layouts
-8. **Test reminder**: Suggest user preview in Miaoyan after generation
+1. **先理解**: 生成前明确主题和受众
+2. **确认大纲**: 创建内容前向用户展示结构
+3. **渐进显示**: 为重要内容使用片段
+4. **视觉层次**: 使用背景分隔部分
+5. **简洁**: 每张幻灯片一个核心思想
+6. **代码聚焦**: 只显示关键代码,删除样板代码
+7. **一致性**: 保持统一的颜色、字体和布局
+8. **测试提醒**: 建议用户生成后在妙言中预览
