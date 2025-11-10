@@ -1,4 +1,4 @@
-调用 `miaoyan-ppt` skill 增强现有的演示文稿,添加视觉效果和动画。
+激活 `miaoyan-ppt` skill 增强现有的演示文稿,添加视觉效果和动画。
 
 这个命令会:
 1. 读取你指定的现有 Markdown 演示文稿

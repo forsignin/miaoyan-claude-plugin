@@ -1,3 +1,4 @@
-miaoyan-ppt.zip
 .claude
-
+.DS_Store
+.gitignore
+*.zip
